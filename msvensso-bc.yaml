@@ -1,0 +1,89 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2022-05-03T13:48:26Z
+  generation: 2
+  labels:
+    app: msvensso
+  managedFields:
+  - apiVersion: build.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:openshift.io/generated-by: {}
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:output:
+          f:to: {}
+        f:runPolicy: {}
+        f:source:
+          f:git:
+            .: {}
+            f:uri: {}
+          f:type: {}
+        f:strategy:
+          f:sourceStrategy:
+            .: {}
+            f:from: {}
+          f:type: {}
+        f:triggers: {}
+    manager: oc.exe
+    operation: Update
+    time: 2022-05-03T13:48:26Z
+  - apiVersion: build.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:imageChangeTriggers: {}
+        f:lastVersion: {}
+    manager: openshift-apiserver
+    operation: Update
+    time: 2022-05-03T13:48:27Z
+  name: msvensso
+  namespace: ocp-af
+  resourceVersion: "51578"
+  uid: b6253483-083c-490e-b280-44102391a4ad
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: msvensso:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/msvensso/msvensso.git
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: openjdk18-openshift:latest
+    type: Source
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: DQsO4L6kGw3p7Ja9NgEx
+    type: GitHub
+  - generic:
+      secret: Y1ADIJCFGcJ-J7NBA2kN
+    type: Generic
+  - type: ConfigChange
+  - imageChange: {}
+    type: ImageChange
+status:
+  imageChangeTriggers:
+  - from:
+      name: openjdk18-openshift:latest
+    lastTriggerTime: 2022-05-03T13:48:27Z
+    lastTriggeredImageID: registry.redhat.io/redhat-openjdk-18/openjdk18-openshift@sha256:5eeed82229c1e0db79e96a07260d52e1aed3e226600ac267a13100969a7ecd8f
+  lastVersion: 1

@@ -1,0 +1,40 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2022-05-03T13:48:26Z
+  generation: 1
+  labels:
+    app: msvensso
+  managedFields:
+  - apiVersion: image.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:openshift.io/generated-by: {}
+        f:labels:
+          .: {}
+          f:app: {}
+    manager: oc.exe
+    operation: Update
+    time: 2022-05-03T13:48:26Z
+  name: msvensso
+  namespace: ocp-af
+  resourceVersion: "52207"
+  uid: c90cbd0a-8fe4-4f92-be03-00513963b1e5
+spec:
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/ocp-af/msvensso
+  publicDockerImageRepository: default-route-openshift-image-registry.apps-crc.testing/ocp-af/msvensso
+  tags:
+  - items:
+    - created: 2022-05-03T13:50:41Z
+      dockerImageReference: image-registry.openshift-image-registry.svc:5000/ocp-af/msvensso@sha256:a01590e33b54de26b548a2ad07562ccfa8ae681cd99dfc059384bd21875ce3fc
+      generation: 1
+      image: sha256:a01590e33b54de26b548a2ad07562ccfa8ae681cd99dfc059384bd21875ce3fc
+    tag: latest
