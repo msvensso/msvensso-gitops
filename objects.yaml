@@ -143,7 +143,7 @@ items:
     name: msvensso
   spec:
     ports:
-    - name: 8081-tcp
+    - name: 8082-tcp
       port: 8080
       protocol: TCP
       targetPort: 8080
